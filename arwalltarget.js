@@ -11,3 +11,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+console.log('arwalltarget.js loaded');
