@@ -1,3 +1,8 @@
+
+/*!
+ * 1.1.0
+ */
+
 document.addEventListener('DOMContentLoaded', function() {
     var links = document.querySelectorAll('a');
     links.forEach(function(link) {
