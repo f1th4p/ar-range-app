@@ -1,0 +1,88 @@
+<style>
+/* Container styles */
+.scrolling-text-container {
+    overflow: visible;
+}
+
+/* Inner container styles */
+.scrolling-text-inner {
+    display: flex;
+    white-space: nowrap;
+}
+
+/* Text styles */
+.scrolling-text {
+    display: flex;
+}
+
+.scrolling-text-item {
+    padding: 0;
+    margin-left: -5px;
+    line-height: normal;
+    font-size: 1em;
+}
+.scrolling-text-item.hashtag {
+    padding: 0 0 0 20px;
+}
+
+/* Apply the animation to the text items */
+.scrolling-text-inner>div {
+    animation: var(--direction) var(--marquee-speed) linear infinite;
+}
+
+/* Pause the animation when a user hovers over it */
+.scrolling-text-container:hover .scrolling-text-inner>div {
+    animation-play-state: paused;
+}
+
+/* Setting the Animation using Keyframes */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes scroll-right {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+</style>
+<div class="scrolling-text-container">
+    <div class="scrolling-text-inner" style="--marquee-speed: 30s; --direction:scroll-left" role="marquee">
+        <div class="scrolling-text">
+            <span class="scrolling-text-item hashtag">#</span><h2 class="scrolling-text-item">3D Configurators</h2>
+            <span class="scrolling-text-item hashtag">#</span><h2 class="scrolling-text-item">Augmented reality</h2>
+            <span class="scrolling-text-item hashtag">#</span><h2 class="scrolling-text-item">POS</h2>
+            <span class="scrolling-text-item hashtag">#</span><h2 class="scrolling-text-item">Pricing systems</h2>
+            <span class="scrolling-text-item hashtag">#</span><h2 class="scrolling-text-item">Ecommerce</h2>
+            <span class="scrolling-text-item hashtag">#</span><h2 class="scrolling-text-item">3D configurators</h2>
+            <span class="scrolling-text-item hashtag">#</span><h2 class="scrolling-text-item">CPQ</h2>
+            <span class="scrolling-text-item hashtag">#</span><h2 class="scrolling-text-item">Augmented reality</h2>
+            <span class="scrolling-text-item hashtag">#</span><h2 class="scrolling-text-item">POS</h2>
+            <span class="scrolling-text-item hashtag">#</span><h2 class="scrolling-text-item">Pricing systems</h2>
+            <!-- Add More Items Here -->
+        </div>
+        <div class="scrolling-text">
+            <span class="scrolling-text-item hashtag">#</span><div class="scrolling-text-item">3D Configurators</div>
+            <span class="scrolling-text-item hashtag">#</span><div class="scrolling-text-item">Augmented reality</div>
+            <span class="scrolling-text-item hashtag">#</span><div class="scrolling-text-item">POS</div>
+            <span class="scrolling-text-item hashtag">#</span><div class="scrolling-text-item">Pricing systems</div>
+            <span class="scrolling-text-item hashtag">#</span><div class="scrolling-text-item">Ecommerce</div>
+            <span class="scrolling-text-item hashtag">#</span><div class="scrolling-text-item">3D configurators</div>
+            <span class="scrolling-text-item hashtag">#</span><div class="scrolling-text-item">CPQ</div>
+            <span class="scrolling-text-item hashtag">#</span><div class="scrolling-text-item">Augmented reality</div>
+            <span class="scrolling-text-item hashtag">#</span><div class="scrolling-text-item">POS</div>
+            <span class="scrolling-text-item hashtag">#</span><div class="scrolling-text-item">Pricing systems</div>
+            <!-- Add More Items Here -->
+        </div>
+    </div>
+</div>
