@@ -1,0 +1,27 @@
+/*div.card-sol-text:empty{
+	outline: 2px solid deeppink;
+  height: 1em;
+}*/
+
+@media (min-width: 10px) {
+	div.case-studies-list{
+  	flex-direction: row;
+  }
+  /*.case-studies-list {grid-template-columns: 1fr;}*/
+}
+
+@media (max-width: 600px) {
+  /*.case-studies-list {grid-template-columns: 1fr;}*/
+  div.case-studies-list{
+  	flex-direction: column;
+  }
+}
+
+@media (max-width: 991px) {
+  div.case-studies-list .w-dyn-item:nth-child(3) {display: none;}
+  /*.case-studies-list {grid-template-columns: 1fr 1fr;}*/
+}
+@media (min-width: 992px) {
+	div.case-studies-list .w-dyn-item:nth-child(3) {display: block;}
+  /*.case-studies-list {grid-template-columns: 1fr 1fr 1fr;}*/
+}
