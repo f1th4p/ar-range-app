@@ -1,4 +1,24 @@
-$(document).ready(function () {
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a[href*="arwall.ar-range.app"]').forEach((link) => {
+        link.setAttribute('target', '_blank');
+    });
+});
+
+$(document).ready(() => {
+    const handleOwlCarousel = (selector, config) => {
+        $(selector).owlCarousel({
+            ...config,
+            onInitialized: addCenterClass,
+            onTranslated: addCenterClass,
+        });
+    };
+
+    const handleSplide = (selector, options) => {
+        $(selector).each(function () {
+            new Splide(this, options).mount();
+        });
+    };
+
     const addCenterClass = (event) => {
         const items = $(event.target).find('.owl-item');
         const centerIndex = Math.floor(items.length / 2);
@@ -6,7 +26,7 @@ $(document).ready(function () {
         items.eq(event.item.index).addClass('center');
     };
 
-    const config = {
+    handleOwlCarousel('.projects-col-list.w-dyn-items', {
         autoplay: true,
         autoplayTimeout: 4000,
         autoplayHoverPause: true,
@@ -20,17 +40,17 @@ $(document).ready(function () {
             768: { items: 2 },
             1000: { items: 3 },
         },
-        onInitialized: addCenterClass,
-        onTranslated: addCenterClass,
-    };
+    });
 
-    const initOwlCarousel = (selector, config) => {
-        $(selector).owlCarousel({ ...config });
-    };
-
-    initOwlCarousel('.projects-col-list.w-dyn-items', config);
-    initOwlCarousel('.projects-col-list-2.w-dyn-items', {
-        ...config,
+    handleOwlCarousel('.projects-col-list-2.w-dyn-items', {
+        autoplay: true,
+        autoplayTimeout: 4000,
+        autoplayHoverPause: true,
+        margin: 10,
+        nav: true,
+        loop: true,
+        animateIn: 'fadeIn',
+        animateOut: 'fadeOut',
         responsive: {
             0: { items: 1 },
             600: { items: 2 },
@@ -38,7 +58,7 @@ $(document).ready(function () {
         },
     });
 
-    initOwlCarousel('.recipe-col-list.w-dyn-items', {
+    handleOwlCarousel('.recipe-col-list.w-dyn-items', {
         autoplay: true,
         autoplayTimeout: 2000,
         autoplayHoverPause: true,
@@ -52,17 +72,9 @@ $(document).ready(function () {
             1000: { items: 10 },
             1500: { items: 10 },
         },
-        onInitialized: addCenterClass,
-        onTranslated: addCenterClass,
     });
 
-    const initSplide = (selector, options) => {
-        $(selector).each(function () {
-            new Splide(this, options).mount();
-        });
-    };
-
-    initSplide('.slider1', {
+    handleSplide('.slider1', {
         autoplay: true,
         perPage: 3,
         perMove: 1,
@@ -86,7 +98,7 @@ $(document).ready(function () {
         },
     });
 
-    initSplide('.slider2', {
+    handleSplide('.slider2', {
         easing: 'ease',
         pauseOnFocus: false,
         autoplay: true,
