@@ -1,16 +1,5 @@
-
-/*!
- * 1.1.0
- */
-
 document.addEventListener('DOMContentLoaded', function() {
-    var links = document.querySelectorAll('a');
-    debugger;
-    links.forEach(function(link) {
-        if (link.href.includes('arwall.ar-range.app')) {
-            link.setAttribute('target', '_blank');
-        }
+    document.querySelectorAll('a[href*="arwall.ar-range.app"]').forEach(function(link) {
+        link.setAttribute('target', '_blank');
     });
 });
-
-console.log('arwalltarget.js loaded');
